@@ -1,0 +1,9 @@
+# DOCKER
+.DS_Store
+docker/data/*
+
+/docker
+docker-compose.yml
+.gitignore
+.gitattributes
+/app/vendor
