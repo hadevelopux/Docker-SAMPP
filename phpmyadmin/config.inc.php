@@ -1,6 +1,6 @@
 <?php
 
-require 'config.secret.inc.php';
+require '/etc/phpmyadmin/config.secret.inc.php';
 
 /* Ensure we got the environment */
 $vars = [
@@ -56,7 +56,7 @@ if (isset($_ENV['PMA_ABSOLUTE_URI'])) {
 /* Figure out hosts */
 
 /* Fallback to default linked */
-$hosts = ['db'];
+$hosts = ['mysql_app'];
 
 /* Set by environment */
 if (! empty($_ENV['PMA_HOST'])) {

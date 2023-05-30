@@ -8,7 +8,7 @@ services:
         volumes: 
             - ./app:/usr/local/apache2/htdocs
         ports:
-            - 8080:80
+            - 8000:80
         depends_on:
             - mysql_app
         networks:
@@ -44,7 +44,7 @@ services:
         volumes:
             - ./phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
         ports:
-            - 8081:80
+            - 8080:80
         depends_on:
             - mysql_app
         networks:
