@@ -6,4 +6,3 @@ docker/data/*
 docker-compose.yml
 .gitignore
 .gitattributes
-/app/vendor

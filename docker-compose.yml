@@ -1,0 +1,53 @@
+version: "3.7"
+
+services:
+    httpd_app:
+        image: httpd:2.4-alpine
+        container_name: httpd_app
+        restart: always
+        volumes: 
+            - ./app:/usr/local/apache2/htdocs
+        ports:
+            - 8000:80
+        depends_on:
+            - mysql_app
+        networks:
+            - networkapp_app
+    mysql_app:
+        image: mysql:8
+        container_name: mysql_app
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_DATABASE: app_db
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: app_root
+        ports:
+            - 33060:3306
+        networks:
+            - networkapp_app
+    php_app:
+        image: php:8.2-rc-fpm-alpine3.17
+        container_name: php_app
+        restart: always
+        depends_on:
+            - mysql_app
+        networks:
+            - networkapp_app
+    phpmyadmin_app:
+        image: phpmyadmin
+        container_name: phpmyadmin_app
+        restart: always
+        environment:
+            - PMA_ARBITRARY=1
+        volumes:
+            - ./phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+        ports:
+            - 8080:80
+        depends_on:
+            - mysql_app
+        networks:
+            - networkapp_app
+networks:
+    networkapp_app:
