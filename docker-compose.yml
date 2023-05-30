@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  httpd_app:
+    image: httpd:2.4-alpine
+    container_name: httpd_app
+    volumes: 
+      - ./app:/usr/local/apache2/htdocs
+    ports:
+      - 8080:80
+    networks:
+      - networkapp_app
+networks:
+  networkapp_app:
