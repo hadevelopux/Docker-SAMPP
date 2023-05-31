@@ -49,5 +49,6 @@ services:
             - mysql_app
         networks:
             - networkapp_app
+
 networks:
     networkapp_app:
