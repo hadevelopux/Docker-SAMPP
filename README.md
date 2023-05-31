@@ -12,10 +12,10 @@ Una distribución de **Apache** fácil de instalar que contiene **MySQL**, **PHP
 
 | Paquete | Version |
 | :----| :------ |
-| Apache | **2.4** |
-| MySQL | **8.0** |
-| PHP | **8.2** |
-| phpMyAdmin | **5.2** |
+| Apache | **2.4.56** |
+| MySQL | **8.0.33** |
+| PHP | **8.1.19** |
+| phpMyAdmin | **5.2.1** |
 
 ## Puertos por defecto
 
