@@ -6,7 +6,7 @@ services:
         container_name: httpd_app
         restart: always
         volumes: 
-            - ./app:/usr/local/apache2/htdocs
+            - ./htdocs:/usr/local/apache2/htdocs
         ports:
             - 8000:80
         depends_on:
