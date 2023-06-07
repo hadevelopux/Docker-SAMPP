@@ -22,7 +22,7 @@ Una distribución de **Apache** fácil de instalar que contiene **MySQL**, **PHP
 | Service | Ports |
 | :------ | :--- |
 | **Apache** | 8000:80 |
-| **MySQL** | 33060:3306 |
+| **MySQL** | 3306:3306 |
 | **phpMyAdmin** | 8080:80 |
 
 ## Credenciales por defecto
