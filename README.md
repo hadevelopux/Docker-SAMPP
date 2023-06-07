@@ -31,5 +31,5 @@ Modificables desde `docker-compose.yml`, los de **phpMyAdmin** desde `config.use
 
 | Service | User | Pass |
 | :------ | :--- | :--- |
-| **MySQL** | app_root | app_root |
-| **phpMyAdmin** | app_root | app_root |
+| **MySQL** | root | root |
+| **phpMyAdmin** | root | root |
