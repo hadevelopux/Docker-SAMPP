@@ -22,10 +22,10 @@ Modificables desde `docker-compose.yml`, los de **phpMyAdmin** desde `config.use
 ## Contenido de paquetes
 | Paquete | Version |
 | :----| :------ |
-| Apache | **2.4.56** |
-| MySQL | **8.0.33** |
-| PHP | **8.1.19** |
-| phpMyAdmin | **5.2.1** |
+| Apache | **2.4.xx** |
+| MySQL | **8.1.xx** |
+| PHP | **8.1.xx** |
+| phpMyAdmin | **5.2.x** |
 
 ## Puertos por defecto
 | Service | Ports |
