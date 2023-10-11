@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
     mysql_app:
-        image: mysql:8-debian
+        image: mysql:8.1
         container_name: mysql_app
         restart: always
         command: --default-authentication-plugin=mysql_native_password
@@ -12,43 +12,32 @@ services:
         ports:
             - 3306:3306
         networks:
-            - networkapp_app
-    php_app:
-        image: php:8-fpm
-        container_name: php_app
-        restart: always
-        depends_on:
-            - mysql_app
-        networks:
-            - networkapp_app
+            - networks_app
+
     phpmyadmin_app:
-        image: phpmyadmin:5.2-apache
+        image: phpmyadmin:5.2
         container_name: phpmyadmin_app
         restart: always
         volumes:
             - ./phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
         ports:
             - 8080:80
+        networks:
+            - networks_app
+
+    wwww_app:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        container_name: wwww_app
+        volumes:
+          - ./www:/var/www/html/
         depends_on:
             - mysql_app
-        networks:
-            - networkapp_app
-    apache_app:
-        image: httpd:2
-        container_name: apache_app
-        restart: always
-        volumes: 
-            - ./htdocs:/usr/local/apache2/htdocs
         ports:
-            - 8000:80
-        depends_on:
-            - mysql_app
-            - php_app
-            - phpmyadmin_app
-        links:
-            - mysql_app
+          - 8000:80
         networks:
-            - networkapp_app
+            - networks_app
 
 networks:
-    networkapp_app:
+    networks_app:
