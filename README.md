@@ -7,10 +7,10 @@ Una distribución de **Apache** fácil de instalar que contiene **MySQL**, **PHP
 ```
 
 ### Vista previa
-Alojamos nuestros archivos web en `htdocs` y navegamos en la siguiente dirección `http://127.0.0.1:8000/`.
+Alojamos nuestros archivos web en `htdocs` y navegamos en la siguiente dirección `http://127.0.0.1:8000/`
 
 ### phpMyAdmin
-Dirección por defecto `http://127.0.0.1:8080/`.
+Dirección por defecto `http://127.0.0.1:8080/`
 
 ### Credenciales por defecto
 Modificables desde `docker-compose.yml`, los de **phpMyAdmin** desde `config.user.inc.php`
