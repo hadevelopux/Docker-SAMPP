@@ -19,7 +19,8 @@ services:
         container_name: phpmyadmin_app
         restart: always
         volumes:
-            - ./phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+            - ./config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+            - ./config.inc.php:/etc/phpmyadmin/config.inc.php
         ports:
             - 8080:80
         networks:
@@ -31,7 +32,8 @@ services:
             dockerfile: ./Dockerfile
         container_name: wwww_app
         volumes:
-          - ./www:/var/www/html/
+            - ./www:/var/www/html/
+            - ./php.ini:/usr/local/etc/php/php.ini
         depends_on:
             - mysql_app
         ports:
