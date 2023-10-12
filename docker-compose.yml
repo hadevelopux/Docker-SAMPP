@@ -20,7 +20,6 @@ services:
         restart: always
         volumes:
             - ./config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
-            - ./config.inc.php:/etc/phpmyadmin/config.inc.php
         ports:
             - 8080:80
         networks:
