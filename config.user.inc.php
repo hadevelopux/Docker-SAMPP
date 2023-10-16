@@ -56,7 +56,7 @@ if (isset($_ENV['PMA_ABSOLUTE_URI'])) {
 /* Figure out hosts */
 
 /* Fallback to default linked */
-$hosts = ['mysql_app'];
+$hosts = ['mysql_sampp'];
 
 /* Set by environment */
 if (! empty($_ENV['PMA_HOST'])) {
