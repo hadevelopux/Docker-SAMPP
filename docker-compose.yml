@@ -1,44 +1,39 @@
 version: "3.7"
 
 services:
-    mysql_app:
+    mysql_sampp:
         image: mysql:8.1
-        container_name: mysql_app
+        container_name: mysql_sampp
         restart: always
         command: --default-authentication-plugin=mysql_native_password
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: phpmyadmin
+        volumes:
+            - ./mysql:/var/lib/mysql
         ports:
             - 3306:3306
-        networks:
-            - networks_app
 
-    phpmyadmin_app:
+    phpmyadmin_sampp:
         image: phpmyadmin:5.2
-        container_name: phpmyadmin_app
+        container_name: phpmyadmin_sampp
         restart: always
         volumes:
             - ./config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
         ports:
             - 8080:80
-        networks:
-            - networks_app
 
-    wwww_app:
+    wwww_sampp:
         build:
             context: .
             dockerfile: ./Dockerfile
-        container_name: wwww_app
+        container_name: wwww_sampp
         volumes:
             - ./www:/var/www/html/
             - ./php.ini:/usr/local/etc/php/php.ini
         depends_on:
-            - mysql_app
+            - mysql_sampp
+            - phpmyadmin_sampp
         ports:
-          - 8000:80
-        networks:
-            - networks_app
-
-networks:
-    networks_app:
+            - 8000:80
+            - '21-22:21-22'
