@@ -3,7 +3,7 @@ Una distribución de **Apache** fácil de instalar que contiene **MySQL**, **PHP
 
 ### Iniciar el contenedor
 ```bash
-  docker-compose up -d
+  docker compose up --build -d
 ```
 
 ### Vista previa
