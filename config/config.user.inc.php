@@ -130,7 +130,7 @@ for ($i = 1; isset($hosts[$i - 1]); $i++) {
 }
 for ($i = 1; isset($sockets[$i - 1]); $i++) {
     $cfg['Servers'][$i]['socket'] = $sockets[$i - 1];
-    $cfg['Servers'][$i]['host'] = 'localhost';
+    $cfg['Servers'][$i]['host'] = 'mysql_sampp';
 }
 /*
  * Revert back to last configured server to make
