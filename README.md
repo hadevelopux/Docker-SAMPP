@@ -13,7 +13,8 @@ Alojamos nuestros archivos web en `www` y navegamos en la siguiente dirección `
 Dirección por defecto `http://127.0.0.1:8080/`
 
 ### Credenciales por defecto
-Modificables desde `docker-compose.yml`, los de **phpMyAdmin** desde `config.user.inc.php`
+Modificables desde `.env`, todas las credenciales de **phpMyAdmin**, **MySQL** y puertos
+
 | Service | User | Pass |
 | :------ | :--- | :--- |
 | **MySQL** | root | root |
@@ -23,13 +24,13 @@ Modificables desde `docker-compose.yml`, los de **phpMyAdmin** desde `config.use
 | Paquete | Version |
 | :----| :------ |
 | Apache | **2.4.xx** |
-| MySQL | **8.1.xx** |
-| PHP | **8.1.xx** |
+| MySQL | **8.2.xx** |
+| PHP | **8.2.xx** |
 | phpMyAdmin | **5.2.x** |
 
 ## Puertos por defecto
 | Service | Ports |
 | :------ | :--- |
 | **Apache** | 8000:80 |
-| **MySQL** | 3306:3306 |
+| **MySQL** | 33066:3306 |
 | **phpMyAdmin** | 8080:80 |
