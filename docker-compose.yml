@@ -19,7 +19,7 @@ services:
         container_name: phpmyadmin_sampp
         restart: always
         volumes:
-            - ./config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+            - ./config/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
         ports:
             - 8080:80
 
@@ -30,7 +30,7 @@ services:
         container_name: wwww_sampp
         volumes:
             - ./www:/var/www/html/
-            - ./php.ini:/usr/local/etc/php/php.ini
+            - ./config/php.ini:/usr/local/etc/php/php.ini
         depends_on:
             - mysql_sampp
             - phpmyadmin_sampp
