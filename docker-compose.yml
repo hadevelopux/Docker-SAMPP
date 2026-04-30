@@ -1,5 +1,5 @@
 services:
-    # --- Base de Datos (MariaDB) ---
+    # --- MariaDB ---
     sampp_mysql:
         image: mariadb:11.8
         container_name: sampp_mysql
@@ -38,7 +38,7 @@ services:
             timeout: 5s
             retries: 3
 
-    # --- Servidor Web (Apache + PHP) ---
+    # --- Web Server (Apache + PHP) ---
     sampp_www:
         build: ./docker/php
         container_name: sampp_www
@@ -65,7 +65,7 @@ services:
             timeout: 5s
             retries: 3
 
-    # --- Proxy Inverso + WAF (ModSecurity 2025) + IPS (Fail2ban) ---
+    # --- Reverse Proxy + WAF (ModSecurity 2025) + IPS (Fail2ban) ---
     sampp_proxy:
         build: ./docker/proxy
         container_name: sampp_proxy
