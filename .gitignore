@@ -8,7 +8,10 @@ node_modules/
 .idx/
 .claude/
 .gemini/
+.agents/
 agents/
+_backup/
+backup/
 AGENTS.md
 CLAUDE.md
 GEMINI.md
@@ -21,3 +24,6 @@ Thumbs.db
 mariadb_data/
 logs/*
 *.log
+
+# Production Data
+www/*
