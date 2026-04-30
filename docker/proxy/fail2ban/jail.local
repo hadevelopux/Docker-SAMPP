@@ -1,0 +1,44 @@
+[DEFAULT]
+# IPs ignoradas (Localhost y redes privadas de Docker)
+ignoreip = 127.0.0.1/8 ::1 172.16.0.0/12 172.17.0.0/16 172.18.0.0/16 192.168.0.0/16 10.0.0.0/8
+
+# Tiempo de baneo: 7 días
+bantime  = 7d
+# Ventana de tiempo: 10 minutos
+findtime = 10m
+# Intentos permitidos por defecto
+maxretry = 10
+
+# Acción de baneo por defecto (usar iptables en el host)
+banaction = iptables-multiport
+banaction_allports = iptables-allports
+
+[modsecurity]
+enabled  = true
+port     = http,https
+filter   = modsecurity
+logpath  = /var/log/nginx/error.log
+maxretry = 3
+
+[nginx-404]
+enabled  = true
+port     = http,https
+filter   = nginx-404
+logpath  = /var/log/nginx/access.log
+maxretry = 5
+findtime = 5m
+
+[nginx-xmlrpc]
+enabled  = true
+port     = http,https
+filter   = nginx-xmlrpc
+logpath  = /var/log/nginx/access.log
+maxretry = 3
+
+[nginx-limit-req]
+enabled  = true
+port     = http,https
+filter   = nginx-limit-req
+logpath  = /var/log/nginx/error.log
+maxretry = 3
+
