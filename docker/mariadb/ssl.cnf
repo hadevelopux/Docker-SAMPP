@@ -1,0 +1,5 @@
+[mariadb]
+ssl-cert=/etc/mysql/ssl/SAMPP.crt
+ssl-key=/etc/mysql/ssl/SAMPP.key
+# Opcional: si quieres forzar SSL para todos
+# require-secure-transport=ON
